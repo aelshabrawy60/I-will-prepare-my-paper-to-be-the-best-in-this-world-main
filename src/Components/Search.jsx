@@ -68,11 +68,57 @@ const Search = ({ onStationsLoad, onSearch }) => {
     }
   };
 
-  // Fetch stations on component mount
   useEffect(() => {
-    fetchStations();
+    const initializeSearch = async () => {
+      try {
+        const token = getAuthToken();
+        const response = await fetch(`${API_BASE_URL}/stations`, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch stations');
+        }
+
+        const data = await response.json();
+        if (data.code === 'success') {
+          const stationsData = data.data.stations || [];
+          setStations(stationsData);
+          if (onStationsLoad) {
+            onStationsLoad(stationsData);
+          }
+
+          // Set default selections if we have at least 2 stations
+          if (stationsData.length >= 2) {
+            setSelectedStartLocation(stationsData[0].id);
+            setSelectedDestination(stationsData[1].id);
+            // Perform initial search with default values
+            const searchPayload = {
+              start_location: stationsData[0].id,
+              destination: stationsData[1].id,
+              date: date,
+              time: time,
+              train_type: selectedTrainType
+            };
+            if (onSearch) {
+              onSearch(searchPayload);
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error in initialization:', error);
+      }
+    };
+
+    // Fetch both stations and train types on mount
+    initializeSearch();
     fetchTrainTypes();
-  }, []);
+  }, []); // Only run on mount
 
   const getAuthToken = () => {
     // First try to get from localStorage, fall back to hardcoded token
