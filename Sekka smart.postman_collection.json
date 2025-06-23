@@ -1,0 +1,3959 @@
+{
+	"info": {
+		"_postman_id": "ec2663e3-c458-44a9-a1e7-1e17a4b81cb7",
+		"name": "Sekka smart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40851547",
+		"_collection_link": "https://sekkasmart.postman.co/workspace/Team-Workspace~c18f4015-8cc3-4c82-8f51-2e211a481747/collection/40851547-ec2663e3-c458-44a9-a1e7-1e17a4b81cb7?action=share&source=collection_link&creator=40851547"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tasbeh",
+									"description": "'required', 'string', 'max:255'",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "Tasbehkhaled50@gmail.com",
+									"description": "required|email|unique:users,email,NULL,id,NULL'",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Tasbeh@123",
+									"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/' , 'confirmed'",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "Tasbeh@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}register",
+							"host": [
+								"{{sekka}}register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tasbeh",
+											"description": "'required', 'string', 'max:255'",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "Tasbehkhaled50@gmail.com",
+											"description": "required|email|unique:users,email,NULL,id,NULL'",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Tasbeh@123",
+											"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/' , 'confirmed'",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Tasbeh@123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}register",
+									"host": [
+										"{{sekka}}register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:07:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم تسجيل المستخدم بنجاح.\",\n    \"data\": {\n        \"token\": \"8|QN0ctEHypViCATmxUCgbfU3IX77fcKK4Rm9M4jR483d02ee6\",\n        \"user_data\": {\n            \"id\": 287,\n            \"name\": \"Tasbeh\",\n            \"email\": \"Tasbehkhaled50@gmail.com\",\n            \"phone\": null,\n            \"gender\": null,\n            \"locale\": null,\n            \"image\": null\n        }\n    }\n}"
+						},
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tasbeh",
+											"description": "'required', 'string', 'max:255'",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "Tasbehkhaled50@gmail.com",
+											"description": "required|email|unique:users,email,NULL,id,NULL'",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Tasbeh@123",
+											"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/' , 'confirmed'",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Tasbeh@1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}register",
+									"host": [
+										"{{sekka}}register"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:10:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"email\": [\n            \"الحقل البريد الإلكتروني تم أخذه مسبقًا.\"\n        ],\n        \"password\": [\n            \"تأكيد الحقل كلمة المرور لا يتطابق.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "Tasbehkhaled22@gmail.com",
+									"description": "'required|email|exists:users,email'",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Tasbeh@123",
+									"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/' , 'confirmed'",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}login",
+							"host": [
+								"{{sekka}}login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Shahood#123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}login",
+									"host": [
+										"{{sekka}}login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:11:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم تسجيل دخول المستخدم بنجاح.\",\n    \"data\": {\n        \"token\": \"9|43RF3jX1DbgKABH5uzt3sVB9rvABzgcTe7XZAWclef9ff49d\",\n        \"user_data\": {\n            \"id\": 286,\n            \"name\": \"Tasbeh\",\n            \"email\": \"Tasbehkhaled26@gmail.com\",\n            \"phone\": null,\n            \"gender\": null,\n            \"locale\": \"en\",\n            \"image\": null\n        }\n    }\n}"
+						},
+						{
+							"name": "invalid credintial",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Shahood#12",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}login",
+									"host": [
+										"{{sekka}}login"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:13:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"errors\": [\n            \"بيانات التسجيل غير صالحة.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Shahood#12",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}login",
+									"host": [
+										"{{sekka}}login"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:13:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"email\": [\n            \"الحقل البريد الإلكتروني يجب أن يكون بريدًا إلكترونيًا صالحًا.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|43RF3jX1DbgKABH5uzt3sVB9rvABzgcTe7XZAWclef9ff49d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{sekka}}logout",
+							"host": [
+								"{{sekka}}logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}logout",
+									"host": [
+										"{{sekka}}logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:15:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"User logged out successfully.\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Forget pasword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "Tasbehkhaled26@gmail.com",
+									"description": "'required|email|exists:users,email'",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}forget-password",
+							"host": [
+								"{{sekka}}forget-password"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26@gmail.com",
+											"description": "'required|email|exists:users,email'",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}forget-password",
+									"host": [
+										"{{sekka}}forget-password"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:16:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26gmail.com",
+											"description": "'required|email|exists:users,email'",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}forget-password",
+									"host": [
+										"{{sekka}}forget-password"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:18:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"email\": [\n            \"الحقل البريد الإلكتروني يجب أن يكون بريدًا إلكترونيًا صالحًا.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Send OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "Tasbehkhaled26@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "3100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}validate-otp",
+							"host": [
+								"{{sekka}}validate-otp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "otp",
+											"value": "3100",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}validate-otp",
+									"host": [
+										"{{sekka}}validate-otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:19:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "otp",
+											"value": "3100",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}validate-otp",
+									"host": [
+										"{{sekka}}validate-otp"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:19:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"errors\": \"OTP is not valid\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "Tasbehkhaled26gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Shahood#1",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "Shahood#123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}reset-password",
+							"host": [
+								"{{sekka}}reset-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Shahood#123",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Shahood#123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}reset-password",
+									"host": [
+										"{{sekka}}reset-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:20:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Shahood#1",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Shahood#123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}reset-password",
+									"host": [
+										"{{sekka}}reset-password"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:25:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"email\": [\n            \"الحقل البريد الإلكتروني يجب أن يكون بريدًا إلكترونيًا صالحًا.\"\n        ],\n        \"password\": [\n            \"تأكيد الحقل كلمة المرور لا يتطابق.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "get user data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sekka}}profile",
+							"host": [
+								"{{sekka}}profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}profile",
+									"host": [
+										"{{sekka}}profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jan 2025 01:54:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"Data retrieved successfully\",\n    \"data\": {\n        \"id\": 286,\n        \"name\": \"Tasbeh\",\n        \"email\": \"Tasbehkhaled26@gmail.com\",\n        \"phone\": null,\n        \"gender\": null,\n        \"locale\": \"en\",\n        \"image\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "my boking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sekka}}my-booking",
+							"host": [
+								"{{sekka}}my-booking"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}my-booking",
+									"host": [
+										"{{sekka}}my-booking"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 21:41:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 232,\n                \"time\": \"11:00\",\n                \"date\": \"2025-03-09\",\n                \"adult_count\": 1,\n                \"children_count\": 1,\n                \"total_price\": \"200.00\",\n                \"status\": \"confirmed\",\n                \"created_at\": \"2025-04-20 23:02:48\",\n                \"schedule\": {\n                    \"id\": 1,\n                    \"departure_station\": {\n                        \"id\": 431,\n                        \"name\": \"محطة Port Braxton\"\n                    },\n                    \"arrival_station\": {\n                        \"id\": 432,\n                        \"name\": \"محطة West Garrison\"\n                    },\n                    \"departure_time\": \"2025-04-15 10:58\",\n                    \"arrival_time\": \"2025-04-15 03:24\"\n                },\n                \"booking_items\": [\n                    {\n                        \"id\": 82,\n                        \"quantity\": 1,\n                        \"price\": \"100.00\",\n                        \"description\": null,\n                        \"status\": \"active\"\n                    },\n                    {\n                        \"id\": 83,\n                        \"quantity\": 1,\n                        \"price\": \"100.00\",\n                        \"description\": null,\n                        \"status\": \"active\"\n                    }\n                ],\n                \"ticket\": {\n                    \"id\": 131,\n                    \"price\": \"200.00\",\n                    \"qr_code_data\": \"{\\\"ticket_id\\\":\\\"38e07eec-0c87-406d-8939-18d4c260f90b\\\",\\\"booking_id\\\":232,\\\"booking_items\\\":[{\\\"seat_id\\\":7,\\\"ticket_type\\\":null,\\\"price\\\":\\\"100.00\\\"},{\\\"seat_id\\\":6,\\\"ticket_type\\\":null,\\\"price\\\":\\\"100.00\\\"}],\\\"from_station\\\":431,\\\"destination_station\\\":432,\\\"date\\\":\\\"2025-03-09T00:00:00.000000Z\\\",\\\"time\\\":\\\"2025-04-21T11:00:00.000000Z\\\",\\\"class_id\\\":1,\\\"total_price\\\":\\\"200.00\\\",\\\"adult_count\\\":1,\\\"children_count\\\":1,\\\"timestamp\\\":1745195947}\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update profile",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept-encoding": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "shh",
+									"description": "'sometimes|string|max:255',",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "Tasbehkhaled26@gmail.com",
+									"description": "'sometimes|email|unique:users,email,' . $this->user()->id,",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01000000000",
+									"description": "'sometimes|unique:users,phone,' . $this->user()->id,",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',\n            'theme'            => 'sometimes|in:light,dark',",
+									"type": "file",
+									"src": "/D:/Sekka/SekkaLogo 2.png"
+								},
+								{
+									"key": "theme",
+									"value": "light",
+									"description": "'sometimes|in:light,dark'",
+									"type": "text"
+								},
+								{
+									"key": "locale",
+									"value": "ar",
+									"description": "'sometimes|in:ar,en',",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "female",
+									"description": "'sometimes|in:male,female',",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}profile",
+							"host": [
+								"{{sekka}}profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "shh",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "Tasbehkhaled26@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "01000000000",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/D:/Sekka/SekkaLogo 2.png"
+										},
+										{
+											"key": "theme",
+											"value": "light",
+											"type": "text"
+										},
+										{
+											"key": "locale",
+											"value": "en",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "female",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}profile",
+									"host": [
+										"{{sekka}}profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 00:48:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم تحديث الملف الشخصي بنجاح\",\n    \"data\": {\n        \"id\": 286,\n        \"name\": \"shh\",\n        \"email\": \"Tasbehkhaled26@gmail.com\",\n        \"phone\": \"01000000000\",\n        \"gender\": \"female\",\n        \"locale\": \"ar\",\n        \"theme\": \"light\",\n        \"image\": \"http://127.0.0.1:8000/uploads/profile/2025/01/aEERboxl.png\",\n        \"city\": {\n            \"id\": 1,\n            \"name\": \"مدينة Eudorachester\"\n        }\n    }\n}"
+						},
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "",
+											"description": "'sometimes|string|max:255',",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "Tasbehkhaledgmail.com",
+											"description": "'sometimes|email|unique:users,email,' . $this->user()->id,",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "01000000000",
+											"description": "'sometimes|unique:users,phone,' . $this->user()->id,",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"description": "'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',\n            'theme'            => 'sometimes|in:light,dark',",
+											"type": "file",
+											"src": "/D:/Sekka/SekkaLogo 2.png"
+										},
+										{
+											"key": "theme",
+											"value": "lightds",
+											"description": "'sometimes|in:light,dark'",
+											"type": "text"
+										},
+										{
+											"key": "locale",
+											"value": "ardf",
+											"description": "'sometimes|in:ar,en',",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "female",
+											"description": "'sometimes|in:male,female',",
+											"type": "text"
+										},
+										{
+											"key": "city_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}profile",
+									"host": [
+										"{{sekka}}profile"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 01:00:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"name\": [\n            \"الحقل الاسم يجب أن يكون نصًا.\"\n        ],\n        \"email\": [\n            \"الحقل البريد الإلكتروني يجب أن يكون بريدًا إلكترونيًا صالحًا.\"\n        ],\n        \"theme\": [\n            \"الحقل الثيم المحدد غير صالح.\"\n        ],\n        \"locale\": [\n            \"الحقل اللغة المحدد غير صالح.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "cities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sekka}}cities",
+							"host": [
+								"{{sekka}}cities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}cities",
+									"host": [
+										"{{sekka}}cities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 01:22:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": {\n        \"cities\": [\n            {\n                \"id\": 1,\n                \"name\": \"مدينة Eudorachester\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"مدينة West Cristobalport\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"مدينة Theodoreborough\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"مدينة North Jerrodhaven\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"مدينة Ornfurt\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"مدينة Scottieside\"\n            }\n        ],\n        \"pagination\": {\n            \"total\": 30,\n            \"per_page\": 6,\n            \"current_page\": 1,\n            \"last_page\": 5,\n            \"next_page_url\": \"http://127.0.0.1:8000/api/cities?page=2\",\n            \"prev_page_url\": null\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{sekka}}deleteAccount",
+							"host": [
+								"{{sekka}}deleteAccount"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}deleteAccount",
+									"host": [
+										"{{sekka}}deleteAccount"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 01:37:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم حذف الحساب بنجاح.\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Pages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sekka}}pages/terms",
+							"host": [
+								"{{sekka}}pages"
+							],
+							"path": [
+								"terms"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "undefined type",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}pages/about",
+									"host": [
+										"{{sekka}}pages"
+									],
+									"path": [
+										"about"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 01:56:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"not_found\",\n    \"errors\": {\n        \"errors\": \"لم يتم العثور على الصفحة\"\n    }\n}"
+						},
+						{
+							"name": "about",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}pages/about",
+									"host": [
+										"{{sekka}}pages"
+									],
+									"path": [
+										"about"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 02:04:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"معلومات عنا\",\n            \"link\": \"about-us\",\n            \"title\": \"معلومات عنا\",\n            \"content\": \"<h1>معلومات عنا</h1><p>هذا هو المحتوى لصفحة معلومات عنا. هنا يمكنك تقديم معلومات عن شركتك أو مؤسستك.</p>\",\n            \"image\": null,\n            \"video\": null,\n            \"type\": \"about\",\n            \"active\": 1\n        }\n    ]\n}"
+						},
+						{
+							"name": "policy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}pages/policy",
+									"host": [
+										"{{sekka}}pages"
+									],
+									"path": [
+										"policy"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 02:05:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"السياسات\",\n            \"link\": \"policies\",\n            \"title\": \"سياساتنا\",\n            \"content\": \"<h1>سياساتنا</h1><p>هذا هو المحتوى لصفحة السياسات. هنا يمكنك وصف سياساتك بالتفصيل.</p>\",\n            \"image\": null,\n            \"video\": null,\n            \"type\": \"policy\",\n            \"active\": 1\n        }\n    ]\n}"
+						},
+						{
+							"name": "terms",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}pages/terms",
+									"host": [
+										"{{sekka}}pages"
+									],
+									"path": [
+										"terms"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 02:05:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"الشروط والأحكام\",\n            \"link\": \"terms-and-conditions\",\n            \"title\": \"الشروط والأحكام\",\n            \"content\": \"<h1>الشروط والأحكام</h1><p>هذا هو المحتوى لصفحة الشروط والأحكام. هنا يمكنك توضيح الشروط والأحكام لاستخدام خدماتك.</p>\",\n            \"image\": null,\n            \"video\": null,\n            \"type\": \"terms\",\n            \"active\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "old_password",
+									"value": "Shaha@341",
+									"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/'",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Shaha@342",
+									"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/' , 'confirmed'",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "Shaha@342",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}updatePassword",
+							"host": [
+								"{{sekka}}updatePassword"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "old_password",
+											"value": "sha",
+											"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/'",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/' , 'confirmed'",
+											"type": "text"
+										},
+										{
+											"key": "password_cofirmation",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}updatePassword",
+									"host": [
+										"{{sekka}}updatePassword"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 02:20:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"old_password\": [\n            \"الحقل old password يجب أن يكون على الأقل 8 حرفًا.\",\n            \"تنسيق الحقل old password غير صالح.\"\n        ],\n        \"password\": [\n            \"الحقل كلمة المرور مطلوب.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "incorrect password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "old_password",
+											"value": "Tasbeh@264",
+											"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/'",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Shaha@341",
+											"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/' , 'confirmed'",
+											"type": "text"
+										},
+										{
+											"key": "password_cofirmation",
+											"value": "Shaha@341",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}updatePassword",
+									"host": [
+										"{{sekka}}updatePassword"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 02:23:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"errors\": \"كلمة المرور الحالية غير صالحة.\"\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "old_password",
+											"value": "Shaha@341",
+											"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/'",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Shaha@342",
+											"description": "'required' , 'string' , 'min:8' , 'regex:/[a-z]/' ,  'regex:/[A-Z]/', 'regex:/\\d/' , 'regex:/[@$!%*#?&]/' , 'confirmed'",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Shaha@342",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}updatePassword",
+									"host": [
+										"{{sekka}}updatePassword"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jan 2025 02:25:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم تحديث كلمة المرور بنجاح\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "21|BlFXs5MPF869YhLyhfMxz8xSGZ0hMb8RF09fNTZD3bbbb66a",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "Home",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "start_location",
+									"value": "431",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "destination",
+									"value": "436",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025-04-29",
+									"description": "Y-M-D",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "time",
+									"value": "19:59",
+									"description": "H:I",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "train_type",
+									"value": "express",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}home",
+							"host": [
+								"{{sekka}}home"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "start_location",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "destination",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-04-29",
+											"description": "Y-M-D",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "19:59",
+											"description": "H:I",
+											"type": "text"
+										},
+										{
+											"key": "train_type",
+											"value": "express",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}home",
+									"host": [
+										"{{sekka}}home"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 21:02:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 3,\n                \"train\": {\n                    \"id\": 253,\n                    \"name\": \"قطار 1\",\n                    \"type\": \"express\",\n                    \"capacity\": 331\n                },\n                \"classes\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"First Classع\",\n                        \"price\": \"100 EGP\",\n                        \"children_price\": \"80 EGP\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"Second Classع\",\n                        \"price\": \"80 EGP\",\n                        \"children_price\": \"50 EGP\"\n                    }\n                ],\n                \"departure_station\": {\n                    \"id\": 435,\n                    \"name\": \"محطة North Glen\",\n                    \"address\": {\n                        \"id\": 455,\n                        \"name\": \"عنوان Kobe Harbor\",\n                        \"city\": null,\n                        \"latitude\": \"-4.177301\",\n                        \"longitude\": \"-62.917367\"\n                    }\n                },\n                \"arrival_station\": {\n                    \"id\": 436,\n                    \"name\": \"محطة Ricardoborough\",\n                    \"address\": {\n                        \"id\": 456,\n                        \"name\": \"عنوان Jonathon Green\",\n                        \"city\": null,\n                        \"latitude\": \"28.259134\",\n                        \"longitude\": \"22.567426\"\n                    }\n                },\n                \"departure_time\": \"2025-05-23 19:37\",\n                \"arrival_time\": \"2025-05-23 17:05\"\n            },\n            {\n                \"id\": 1,\n                \"train\": {\n                    \"id\": 251,\n                    \"name\": \"قطار 8\",\n                    \"type\": \"local\",\n                    \"capacity\": 274\n                },\n                \"classes\": [],\n                \"departure_station\": {\n                    \"id\": 431,\n                    \"name\": \"محطة Port Braxton\",\n                    \"address\": {\n                        \"id\": 451,\n                        \"name\": \"عنوان Lelah Landing\",\n                        \"city\": {\n                            \"id\": 1,\n                            \"name\": \"مدينة Eudorachester\"\n                        },\n                        \"latitude\": \"1.76121\",\n                        \"longitude\": \"-52.945481\"\n                    }\n                },\n                \"arrival_station\": {\n                    \"id\": 432,\n                    \"name\": \"محطة West Garrison\",\n                    \"address\": {\n                        \"id\": 452,\n                        \"name\": \"عنوان Kihn Lights\",\n                        \"city\": null,\n                        \"latitude\": \"35.571973\",\n                        \"longitude\": \"-38.317767\"\n                    }\n                },\n                \"departure_time\": \"2025-05-24 10:58\",\n                \"arrival_time\": \"2025-05-24 03:24\"\n            },\n            {\n                \"id\": 2,\n                \"train\": {\n                    \"id\": 252,\n                    \"name\": \"قطار 7\",\n                    \"type\": \"local\",\n                    \"capacity\": 422\n                },\n                \"classes\": [],\n                \"departure_station\": {\n                    \"id\": 433,\n                    \"name\": \"محطة Runtemouth\",\n                    \"address\": {\n                        \"id\": 453,\n                        \"name\": \"عنوان Dorian Club\",\n                        \"city\": null,\n                        \"latitude\": \"69.393703\",\n                        \"longitude\": \"12.717046\"\n                    }\n                },\n                \"arrival_station\": {\n                    \"id\": 434,\n                    \"name\": \"محطة Alenechester\",\n                    \"address\": {\n                        \"id\": 454,\n                        \"name\": \"عنوان McLaughlin Prairie\",\n                        \"city\": null,\n                        \"latitude\": \"-49.388498\",\n                        \"longitude\": \"89.046576\"\n                    }\n                },\n                \"departure_time\": \"2025-05-31 19:59\",\n                \"arrival_time\": \"2025-05-31 23:05\"\n            }\n        ],\n        \"pagination\": {\n            \"total\": 3,\n            \"per_page\": 15,\n            \"current_page\": 1,\n            \"last_page\": 1,\n            \"next_page_url\": null,\n            \"prev_page_url\": null\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Single trip",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "start_location",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "destination",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025-04-29",
+									"description": "Y-M-D",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "19:59",
+									"description": "H:I",
+									"type": "text"
+								},
+								{
+									"key": "train_type",
+									"value": "express",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}trip/{{id}}",
+							"host": [
+								"{{sekka}}trip"
+							],
+							"path": [
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "start_location",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "destination",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-04-29",
+											"description": "Y-M-D",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "19:59",
+											"description": "H:I",
+											"type": "text"
+										},
+										{
+											"key": "train_type",
+											"value": "express",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}trip/{{id}}",
+									"host": [
+										"{{sekka}}trip"
+									],
+									"path": [
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 21:02:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 3,\n                \"train\": {\n                    \"id\": 253,\n                    \"name\": \"قطار 1\",\n                    \"type\": \"express\",\n                    \"capacity\": 331\n                },\n                \"classes\": [\n                    {\n                        \"id\": 2,\n                        \"name\": \"Second Classع\",\n                        \"price\": \"80 EGP\"\n                    },\n                    {\n                        \"id\": 1,\n                        \"name\": \"First Classع\",\n                        \"price\": \"100 EGP\"\n                    }\n                ],\n                \"departure_station\": {\n                    \"id\": 435,\n                    \"name\": \"محطة North Glen\",\n                    \"address\": {\n                        \"id\": 455,\n                        \"name\": \"عنوان Kobe Harbor\",\n                        \"city\": null,\n                        \"latitude\": \"-4.177301\",\n                        \"longitude\": \"-62.917367\"\n                    }\n                },\n                \"arrival_station\": {\n                    \"id\": 436,\n                    \"name\": \"محطة Ricardoborough\",\n                    \"address\": {\n                        \"id\": 456,\n                        \"name\": \"عنوان Jonathon Green\",\n                        \"city\": null,\n                        \"latitude\": \"28.259134\",\n                        \"longitude\": \"22.567426\"\n                    }\n                },\n                \"departure_time\": \"2025-05-14 19:37\",\n                \"arrival_time\": \"2025-05-14 17:05\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "stations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "start_location",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "destination",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025-04-29",
+									"description": "Y-M-D",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "19:59",
+									"description": "H:I",
+									"type": "text"
+								},
+								{
+									"key": "train_type",
+									"value": "express",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}stations/",
+							"host": [
+								"{{sekka}}stations"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "start_location",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "destination",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-04-29",
+											"description": "Y-M-D",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "19:59",
+											"description": "H:I",
+											"type": "text"
+										},
+										{
+											"key": "train_type",
+											"value": "express",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}stations/",
+									"host": [
+										"{{sekka}}stations"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 08 May 2025 10:59:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "platform",
+									"value": "hostinger"
+								},
+								{
+									"key": "panel",
+									"value": "hpanel"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "upgrade-insecure-requests"
+								},
+								{
+									"key": "Server",
+									"value": "hcdn"
+								},
+								{
+									"key": "x-hcdn-request-id",
+									"value": "012f9201d80efadc287ce0abf45232ac-int-edge3"
+								},
+								{
+									"key": "x-hcdn-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "x-hcdn-upstream-rt",
+									"value": "0.046"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": {\n        \"stations\": [\n            {\n                \"id\": 1,\n                \"name\": \"محطة Lucienneview\",\n                \"address\": {\n                    \"id\": 21,\n                    \"name\": \"عنوان Waters Squares\",\n                    \"latitude\": \"-67.307622\",\n                    \"longitude\": \"-65.215505\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"محطة McCulloughborough\",\n                \"address\": {\n                    \"id\": 22,\n                    \"name\": \"عنوان Violette Inlet\",\n                    \"latitude\": \"-76.804221\",\n                    \"longitude\": \"78.678664\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"محطة New Christophe\",\n                \"address\": {\n                    \"id\": 23,\n                    \"name\": \"عنوان Waelchi Stravenue\",\n                    \"latitude\": \"70.353849\",\n                    \"longitude\": \"92.785653\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"name\": \"محطة South Delberthaven\",\n                \"address\": {\n                    \"id\": 24,\n                    \"name\": \"عنوان Schmeler Island\",\n                    \"latitude\": \"-46.891016\",\n                    \"longitude\": \"-105.132374\"\n                }\n            },\n            {\n                \"id\": 5,\n                \"name\": \"محطة Santinoburgh\",\n                \"address\": {\n                    \"id\": 25,\n                    \"name\": \"عنوان Nicholaus Ways\",\n                    \"latitude\": \"-79.788957\",\n                    \"longitude\": \"121.281714\"\n                }\n            },\n            {\n                \"id\": 6,\n                \"name\": \"محطة Casperstad\",\n                \"address\": {\n                    \"id\": 26,\n                    \"name\": \"عنوان Maxime Mountain\",\n                    \"latitude\": \"-87.443564\",\n                    \"longitude\": \"-76.155191\"\n                }\n            }\n        ],\n        \"pagination\": {\n            \"total\": 471,\n            \"per_page\": 6,\n            \"current_page\": 1,\n            \"last_page\": 79,\n            \"next_page_url\": \"https://lawngreen-walrus-394451.hostingersite.com/api/stations?page=2\",\n            \"prev_page_url\": null\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "single stations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "start_location",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "destination",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025-04-29",
+									"description": "Y-M-D",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "19:59",
+									"description": "H:I",
+									"type": "text"
+								},
+								{
+									"key": "train_type",
+									"value": "express",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}stations/",
+							"host": [
+								"{{sekka}}stations"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "start_location",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "destination",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-04-29",
+											"description": "Y-M-D",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "19:59",
+											"description": "H:I",
+											"type": "text"
+										},
+										{
+											"key": "train_type",
+											"value": "express",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}stations/{{id}}",
+									"host": [
+										"{{sekka}}stations"
+									],
+									"path": [
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 08 May 2025 10:59:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "platform",
+									"value": "hostinger"
+								},
+								{
+									"key": "panel",
+									"value": "hpanel"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "upgrade-insecure-requests"
+								},
+								{
+									"key": "Server",
+									"value": "hcdn"
+								},
+								{
+									"key": "x-hcdn-request-id",
+									"value": "e911db1afa22308555e49f48983a7cbb-int-edge3"
+								},
+								{
+									"key": "x-hcdn-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "x-hcdn-upstream-rt",
+									"value": "0.035"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"محطة Lucienneview\",\n        \"address\": {\n            \"id\": 21,\n            \"name\": \"عنوان Waters Squares\",\n            \"latitude\": \"-67.307622\",\n            \"longitude\": \"-65.215505\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Train Types",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{sekka}}train-types",
+							"host": [
+								"{{sekka}}train-types"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{sekka}}train-types",
+									"host": [
+										"{{sekka}}train-types"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Apr 2025 22:59:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": {\n        \"data\": {\n            \"express\": \"قطار سريع\",\n            \"ordinary\": \"قطار عادي\",\n            \"sleeper \": \"قطار نوم\"\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "21|BlFXs5MPF869YhLyhfMxz8xSGZ0hMb8RF09fNTZD3bbbb66a",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "20|5P0ZHUNmv5SFS9lcsx8extHz2QxVU9tvyB6I1Aiuc1876969",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "time",
+									"value": "11:00",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025-3-9",
+									"type": "text"
+								},
+								{
+									"key": "adult_count",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "children_count",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "schedule_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "class_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "railcar_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "seats[0]",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "seats[1]",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}bookings",
+							"host": [
+								"{{sekka}}bookings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{sekka}}bookings",
+									"host": [
+										"{{sekka}}bookings"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 22:10:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"user_id\": [\n            \"The user id field is required.\"\n        ],\n        \"from_station_id\": [\n            \"The from station id field is required.\"\n        ],\n        \"destination_station_id\": [\n            \"The destination station id field is required.\"\n        ],\n        \"time\": [\n            \"The time field is required.\"\n        ],\n        \"date\": [\n            \"The date field is required.\"\n        ],\n        \"adult_count\": [\n            \"The adult count field is required.\"\n        ],\n        \"children_count\": [\n            \"The children count field is required.\"\n        ],\n        \"total_price\": [\n            \"The total price field is required.\"\n        ],\n        \"items\": [\n            \"The items field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "time",
+											"value": "11:00",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-3-9",
+											"type": "text"
+										},
+										{
+											"key": "adult_count",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "children_count",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "schedule_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "class_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "railcar_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "seats[0]",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "seats[1]",
+											"value": "6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}bookings",
+									"host": [
+										"{{sekka}}bookings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Apr 2025 23:02:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": {\n        \"booking\": {\n            \"id\": 232,\n            \"time\": \"11:00\",\n            \"date\": \"2025-03-09\",\n            \"adult_count\": \"1\",\n            \"children_count\": \"1\",\n            \"total_price\": 200,\n            \"status\": \"pending\",\n            \"created_at\": \"2025-04-20 23:02:48\",\n            \"user\": {\n                \"id\": 291,\n                \"name\": \"Tasbeh\",\n                \"email\": \"Tasbehkhaled26@gmail.com\",\n                \"phone\": null,\n                \"gender\": null,\n                \"locale\": \"ar\",\n                \"theme\": \"dark\",\n                \"image\": \"http://127.0.0.1:8000/assets/profile/image.png\"\n            },\n            \"booking_items\": [\n                {\n                    \"id\": 82,\n                    \"quantity\": 1,\n                    \"price\": \"100.00\",\n                    \"description\": null,\n                    \"status\": \"active\"\n                },\n                {\n                    \"id\": 83,\n                    \"quantity\": 1,\n                    \"price\": \"100.00\",\n                    \"description\": null,\n                    \"status\": \"active\"\n                }\n            ]\n        }\n    }\n}"
+						},
+						{
+							"name": "book ticket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "time",
+											"value": "11:00",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-3-9",
+											"type": "text"
+										},
+										{
+											"key": "adult_count",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "children_count",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "schedule_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "class_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "railcar_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "seats[0]",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "seats[1]",
+											"value": "6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}bookings",
+									"host": [
+										"{{sekka}}bookings"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Apr 2025 23:24:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"errors\": \"المقعد محجوز بالفعل\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "card_number",
+									"value": "3453453453",
+									"type": "text"
+								},
+								{
+									"key": "booking_id",
+									"value": "232",
+									"type": "text"
+								},
+								{
+									"key": "exp_month",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "exp_year",
+									"value": "2027",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "cvc",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "tok_visa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}payment",
+							"host": [
+								"{{sekka}}payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{sekka}}bookings",
+									"host": [
+										"{{sekka}}bookings"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 22:10:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"user_id\": [\n            \"The user id field is required.\"\n        ],\n        \"from_station_id\": [\n            \"The from station id field is required.\"\n        ],\n        \"destination_station_id\": [\n            \"The destination station id field is required.\"\n        ],\n        \"time\": [\n            \"The time field is required.\"\n        ],\n        \"date\": [\n            \"The date field is required.\"\n        ],\n        \"adult_count\": [\n            \"The adult count field is required.\"\n        ],\n        \"children_count\": [\n            \"The children count field is required.\"\n        ],\n        \"total_price\": [\n            \"The total price field is required.\"\n        ],\n        \"items\": [\n            \"The items field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "generate ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "card_number",
+									"value": "3453453453",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "booking_id",
+									"value": "221",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "exp_month",
+									"value": "12",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "exp_year",
+									"value": "2027",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": "100",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "cvc",
+									"value": "123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "tok_visa",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}tickets/generate/232",
+							"host": [
+								"{{sekka}}tickets"
+							],
+							"path": [
+								"generate",
+								"232"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{sekka}}bookings",
+									"host": [
+										"{{sekka}}bookings"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Mar 2025 22:10:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"user_id\": [\n            \"The user id field is required.\"\n        ],\n        \"from_station_id\": [\n            \"The from station id field is required.\"\n        ],\n        \"destination_station_id\": [\n            \"The destination station id field is required.\"\n        ],\n        \"time\": [\n            \"The time field is required.\"\n        ],\n        \"date\": [\n            \"The date field is required.\"\n        ],\n        \"adult_count\": [\n            \"The adult count field is required.\"\n        ],\n        \"children_count\": [\n            \"The children count field is required.\"\n        ],\n        \"total_price\": [\n            \"The total price field is required.\"\n        ],\n        \"items\": [\n            \"The items field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "card_number",
+											"value": "3453453453",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "booking_id",
+											"value": "221",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "exp_month",
+											"value": "12",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "exp_year",
+											"value": "2027",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "amount",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "cvc",
+											"value": "123",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "tok_visa",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}tickets/generate/232",
+									"host": [
+										"{{sekka}}tickets"
+									],
+									"path": [
+										"generate",
+										"232"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 00:39:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"tickets.generated_successfully\",\n    \"data\": {\n        \"data\": {\n            \"id\": 131,\n            \"price\": \"200.00\",\n            \"qr_code_data\": \"{\\\"ticket_id\\\":\\\"38e07eec-0c87-406d-8939-18d4c260f90b\\\",\\\"booking_id\\\":232,\\\"booking_items\\\":[{\\\"seat_id\\\":7,\\\"ticket_type\\\":null,\\\"price\\\":\\\"100.00\\\"},{\\\"seat_id\\\":6,\\\"ticket_type\\\":null,\\\"price\\\":\\\"100.00\\\"}],\\\"from_station\\\":431,\\\"destination_station\\\":432,\\\"date\\\":\\\"2025-03-09T00:00:00.000000Z\\\",\\\"time\\\":\\\"2025-04-21T11:00:00.000000Z\\\",\\\"class_id\\\":1,\\\"total_price\\\":\\\"200.00\\\",\\\"adult_count\\\":1,\\\"children_count\\\":1,\\\"timestamp\\\":1745195947}\",\n            \"booking\": {\n                \"id\": 232,\n                \"time\": \"11:00\",\n                \"date\": \"2025-03-09\",\n                \"adult_count\": 1,\n                \"children_count\": 1,\n                \"total_price\": \"200.00\",\n                \"status\": \"confirmed\",\n                \"created_at\": \"2025-04-20 23:02:48\",\n                \"booking_items\": [\n                    {\n                        \"id\": 82,\n                        \"quantity\": 1,\n                        \"price\": \"100.00\",\n                        \"description\": null,\n                        \"seat\": {\n                            \"id\": 7,\n                            \"name\": {\n                                \"en\": \"Seat 3\",\n                                \"ar\": \"مقعد 4\"\n                            },\n                            \"number\": \"043\",\n                            \"availability\": false\n                        },\n                        \"status\": \"active\"\n                    },\n                    {\n                        \"id\": 83,\n                        \"quantity\": 1,\n                        \"price\": \"100.00\",\n                        \"description\": null,\n                        \"seat\": {\n                            \"id\": 6,\n                            \"name\": {\n                                \"en\": \"Seat 1\",\n                                \"ar\": \"مقعد 3\"\n                            },\n                            \"number\": \"531\",\n                            \"availability\": true\n                        },\n                        \"status\": \"active\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "cancel booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "reason_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cancel_comment",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{sekka}}cancel-booking/229",
+							"host": [
+								"{{sekka}}cancel-booking"
+							],
+							"path": [
+								"229"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "it already refund",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "card_number",
+											"value": "3453453453",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "booking_id",
+											"value": "221",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "exp_month",
+											"value": "12",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "exp_year",
+											"value": "2027",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "amount",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "cvc",
+											"value": "123",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "tok_visa",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}cancel-booking/232",
+									"host": [
+										"{{sekka}}cancel-booking"
+									],
+									"path": [
+										"232"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 22:12:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"error\",\n    \"errors\": \"Charge ch_3RG7GOLfThbjnhfP3Y9v6SCs has already been refunded.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "card_number",
+											"value": "3453453453",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "booking_id",
+											"value": "221",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "exp_month",
+											"value": "12",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "exp_year",
+											"value": "2027",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "amount",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "cvc",
+											"value": "123",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "tok_visa",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}cancel-booking/231",
+									"host": [
+										"{{sekka}}cancel-booking"
+									],
+									"path": [
+										"231"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 22:13:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"home.cancel_success\",\n    \"data\": {\n        \"booking\": {\n            \"id\": 229,\n            \"time\": \"11:00\",\n            \"date\": \"2025-03-09\",\n            \"adult_count\": 1,\n            \"children_count\": 1,\n            \"total_price\": \"200.00\",\n            \"status\": \"cancelled\",\n            \"created_at\": \"2025-04-20 21:55:31\",\n            \"cancel_comment\": \"test\",\n            \"user\": {\n                \"id\": 291,\n                \"name\": \"Tasbeh\",\n                \"email\": \"Tasbehkhaled26@gmail.com\",\n                \"phone\": null,\n                \"gender\": null,\n                \"locale\": \"ar\",\n                \"theme\": \"dark\",\n                \"image\": \"http://127.0.0.1:8000/assets/profile/image.png\"\n            },\n            \"schedule\": {\n                \"id\": 1,\n                \"departure_time\": \"2025-04-30 10:58\",\n                \"arrival_time\": \"2025-04-30 03:24\"\n            },\n            \"booking_items\": [\n                {\n                    \"id\": 78,\n                    \"quantity\": 1,\n                    \"price\": \"100.00\",\n                    \"description\": null,\n                    \"status\": \"active\"\n                },\n                {\n                    \"id\": 79,\n                    \"quantity\": 1,\n                    \"price\": \"100.00\",\n                    \"description\": null,\n                    \"status\": \"active\"\n                }\n            ],\n            \"reason\": {\n                \"id\": 1,\n                \"name\": \"تغيير في الخطط\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "time out",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "card_number",
+											"value": "3453453453",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "booking_id",
+											"value": "221",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "exp_month",
+											"value": "12",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "exp_year",
+											"value": "2027",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "amount",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "cvc",
+											"value": "123",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "token",
+											"value": "tok_visa",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{sekka}}cancel-booking/228",
+									"host": [
+										"{{sekka}}cancel-booking"
+									],
+									"path": [
+										"228"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 22:19:06 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"error\",\n    \"message\": \"validation_error\",\n    \"errors\": {\n        \"errors\": \"لا يمكنك ان يتم الغاء الحجز قبل 3 ساعات من تاريخ المغادرة\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "reasons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sekka}}reasons",
+							"host": [
+								"{{sekka}}reasons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{sekka}}reasons",
+									"host": [
+										"{{sekka}}reasons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Apr 2025 22:34:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"success\",\n    \"message\": \"تم الحصول على البيانات بنجاح\",\n    \"data\": {\n        \"reasons\": [\n            {\n                \"id\": 1,\n                \"name\": \"تغيير في الخطط\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"وجدت خياراً أفضل\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"حالة طارئة شخصية\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"مشاكل مالية\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"قيود السفر\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"مخاوف صحية\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"تعارض في المواعيد\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"ظروف الطقس\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "23|DYbfT5q0ZKEnakmkWDyBtxlY8lMLV0Ae4NJT2H0f916de135",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
